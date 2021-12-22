@@ -60,7 +60,7 @@ def save_youtube_videos(query, api_service_name, api_version, api_key):
 # Begining of Search
 def start_youtube_search(query, api_service_name, api_version):
 		# Get all the api keys provided
-		api_keys = ApiKeys.objects.all()
+		api_keys = list(ApiKeys.objects.all())
 		if (len(api_keys) == 0):
 				print("Oops! No API key found...")
 		else:
@@ -85,6 +85,6 @@ def start_youtube_search(query, api_service_name, api_version):
 
 						# Stop searching if all API keys are used
 						if key_count == len(api_keys):
-									print("working")
+
 									print("All api keys are exhausted...")
 									break
