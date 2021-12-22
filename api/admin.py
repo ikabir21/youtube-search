@@ -10,6 +10,7 @@ class VideoModelConfig(admin.ModelAdmin):
     search_fields = ('title', 'description')
     ordering = ('id', 'publishing_time', 'created_at', 'updated_at')
     list_display = ('id', 'title', 'description', 'publishing_time', 'thumbnails', 'video_uid')
+    list_filter = ('publishing_time', 'updated_at')
 
 
 admin.site.register(Videos, VideoModelConfig)

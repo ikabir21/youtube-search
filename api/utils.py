@@ -24,6 +24,9 @@ def save_to_db(videos):
 				except IntegrityError:
 						print("Duplicate Video")
 						continue
+				except Exception as e:
+						print(e)
+						continue
 
 def get_videos(query, api_service_name, api_version, api_key):
 		# Try to save Videos
@@ -45,7 +48,7 @@ def get_videos(query, api_service_name, api_version, api_key):
     
 				return True
 		except googleapiclient.errors.HttpError:
-				print("quota exceeded for API key: {}".format(api_key))
+				print("quota exhausted for API key: {}".format(api_key))
 				return False
 
 
